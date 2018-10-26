@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app ='testApp'>
+<head>
+  <meta charset="utf-8">
+  <title>Exercice 4</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+</head>
+<body>
+  <div ng-controller='carsCtrl'>
+    <table cellspacing="2px" cellpadding="2px;" rules="all" style="border:solid 1px black;">
+      <thead>
+        <th>Modèle</th>
+        <th>Marque</th>
+      </thead>
+      <!-- La directive ngIf supprime ou recrée une partie de l'arborescence DOM basée sur une {expression}.
+      Si l'expression affectée à ngIf est évaluée à une valeur false,
+      l'élément est supprimé du DOM, sinon un clone de l'élément est réinséré dans le DOM.  -->
+      <tr ng-repeat="cars in cars" ng-if="cars.couleur != 'verte'">
+        <td>
+          {{cars.marque}}
+        </td>
+        <td>
+          {{cars.couleur}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
